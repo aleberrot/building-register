@@ -1,0 +1,96 @@
+
+
+body{
+    margin: 0;
+    background-color: #cbcbcb;
+}
+
+.form{
+    padding: 6px 10px;
+    max-width: 500px;
+    margin: auto;
+    background-color: #666;
+    box-shadow: 0 0 55px #9f9f9f22;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.input, .select, .datalist, .textarea{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid #666;
+    box-shadow: 0 0 15px #0003;
+    background-color: #0003;
+    border-radius: 5px;
+    color: #ddd;
+    margin: 5px 0;
+}
+
+fieldset{
+    margin: 10px 0;
+    border: 1px solid #ddd6;
+    border-radius: 5px;
+}
+
+legend{
+    padding: 0 6px;
+    color: #ddd;
+}
+
+label{
+    font-family: sans-serif;
+    color: #ddd;
+}
+
+.checkbox{
+    margin: 10px 0;
+}
+
+.select{
+    color: #666;
+}
+
+.textarea{
+    font-family: sans-serif;
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+option{
+    font-family: sans-serif;
+
+}
+
+td, th{
+    text-align: center;
+    padding: 6px;
+    font-family: sans-serif;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
+
+td{
+    color: #555;
+}
+
+th{
+    background-color: #777;
+}
+
+table{
+    width: 100%;
+    
+    border-spacing: 10px;
+    border: 0.5px solid #000;
+    box-shadow: 0 0 25px #666;
+    max-width: 500px;
+    margin: 100px auto 100px auto;
+}
+
+.button{
+border-radius:5px;
+background-color: #0A0;
+}

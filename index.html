@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+    <link rel="manifest" href="assets/site.webmanifest">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PROYECTO 1</h1>
+    <section>
+        <div>
+            <form class="form">
+                <fieldset>
+                   <legend>INFORMACION DE IDENTIDAD</legend>
+                   <input class="input" type="text" placeholder="Nombre">
+                   <input class="input" type="text" placeholder="Apellido">
+                    <input class="input" type="number" placeholder="Edad">
+                    <input class="input" type="text" placeholder="Rut" maxlength="12" autocomplete="off" id="rut">
+                </fieldset>
+              
+                <fieldset>
+                       <legend>INFORMACION DE CONTACTO</legend>
+                       <input class="input" type="email" placeholder="Email" id="email">
+                       <input class="input" type="text" placeholder="Telefono">
+                </fieldset>   
+                      
+                <div>
+                    <label for="">Tipo de usuario:
+                          <select class="select">
+                             <option value="Familia">Visita</option>
+                             <option value="Amigo/a">Servicio</option>
+                          </select>
+                       </label>
+                    </div>
+                    <div>
+                    <label for="">Referente:
+                          <input class="datalist" list="referente"">
+                          <datalist id="referente">
+                             <option value="Familia">Reunion/visita</option>
+                             <option value="Amigos">Reunion/visita</option>
+                             <option value="Servicio">Trabajos generales</option>
+                          </datalist>
+                       </label>
+                    </div>
+                    <div>
+                       <label for="">Motivo de visita:
+                          <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
+                       </label>
+                    </div>
+                    <button type="button" id="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
