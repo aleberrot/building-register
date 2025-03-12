@@ -11,49 +11,61 @@
     <title>Building Register</title>
 </head>
 <body>
-    <h1>PROYECTO 1</h1>
-    <section>
-        <div>
-            <form class="form">
-                <fieldset>
-                   <legend>INFORMACION DE IDENTIDAD</legend>
-                   <input class="input" type="text" placeholder="Nombre" id="name">
-                   <input class="input" type="text" placeholder="Apellido" id="lastname">
-                    <input class="input" type="number" placeholder="Edad" id="age" min="1" max="100">
-                    <input class="input" type="text" placeholder="Rut" maxlength="12" autocomplete="off" id="rut">
-                </fieldset>
-              
-                <fieldset>
-                       <legend>INFORMACION DE CONTACTO</legend>
-                       <input class="input" type="email" placeholder="Email" id="email">
-                       <input class="input" type="text" placeholder="Telefono" id="phone">
-                </fieldset>   
-                      
-                <div>
-                    <label for="tipo-de-usuario">Tipo de usuario:
-                          <select class="select">
-                             <option value="Familia">Visita</option>
-                             <option value="Amigo/a">Servicio</option>
-                          </select>
-                       </label>
-                    </div>
-                    <div>
-                    <label for="Referente">Referente:
-                          <select class="select">
-                             <option value="Amigos">Reunion/visita</option>
-                             <option value="Servicio">Trabajos generales</option>
-                          </select>
-                       </label>
-                    </div>
-                    <div>
-                       <label for="motivo-de-visita">Motivo de visita:
-                          <textarea class="textarea" name="" id="message" cols="30" rows="10"></textarea>
-                       </label>
-                    </div>
-                    <button type="button" id="submit">Enviar</button>
-            </form>
-        </div>
-    </section>
+
+    <div class="container">
+        <h1>Registro de Visitas</h1>
+
+        <form class="form">
+            <!-- Información de Identidad -->
+            <fieldset>
+                <legend>Información de Identidad</legend>
+                <label for="name">Nombre:</label>
+                <input class="input" type="text" id="name" placeholder="Nombre">
+
+                <label for="lastName">Apellido:</label>
+                <input class="input" type="text" id="lastName" placeholder="Apellido">
+
+                <label for="age">Edad:</label>
+                <input class="input" type="number" id="age" min="1" max="100" placeholder="Edad">
+
+                <label for="rut">RUT:</label>
+                <input class="input" type="text" id="rut" maxlength="12" autocomplete="off" placeholder="RUT">
+            </fieldset>
+
+            <!-- Información de Contacto -->
+            <fieldset>
+                <legend>Información de Contacto</legend>
+                <label for="email">Email:</label>
+                <input class="input" type="email" id="email" placeholder="Email">
+
+                <label for="phone">Teléfono:</label>
+                <input class="input" type="text" id="phone" placeholder="Teléfono">
+            </fieldset>
+
+            <!-- Selecciones -->
+            <fieldset>
+                <legend>Detalles de Visita</legend>
+
+                <label for="tipo-de-usuario">Tipo de usuario:</label>
+                <select id="tipo-de-usuario" class="select">
+                    <option value="Familia">Visita</option>
+                    <option value="Amigo/a">Servicio</option>
+                </select>
+
+                <label for="referente">Referente:</label>
+                <select id="referente" class="select">
+                    <option value="Amigos">Reunión/Visita</option>
+                    <option value="Servicio">Trabajos Generales</option>
+                </select>
+
+                <label for="message">Motivo de visita:</label>
+                <textarea id="message" class="textarea" cols="30" rows="3" placeholder="Motivo de visita"></textarea>
+            </fieldset>
+
+            <button type="button" id="submit">Enviar</button>
+        </form>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

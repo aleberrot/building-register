@@ -1,3 +1,4 @@
+
 // Inputs elements
 const inputRUT = document.getElementById('rut');
 const inputEmail = document.getElementById('email');
@@ -49,8 +50,10 @@ function handleRUT(){
     let rut = inputRUT.value;
     if (validateRUT(rut)){
         alert('RUT válido');
+        return true;
     }else{
         alert('RUT inválido');
+        return false;
     }
 }
 
@@ -63,19 +66,45 @@ function reverseRUT(rut){
 
 }
 
+
+
 // TODO Handle Submission
-function handleSubmit(){
-    if (handleRUT() && handleEmail()){
-        alert('Formulario enviado con éxito');
-    }else{
-        console.error('Error en el formulario');
+async function handleSubmit(e){
+    e.preventDefault();
+    const data = {
+        rut: inputRUT.value,
+        email: inputEmail.value,
+        name: inputName.value,
+        lastName: inputLastName.value,
+        age: inputAge.value,
+        phone: inputPhone.value
     }
+    console.log(data);
+    try {
+        const response = await fetch("http://127.0.0.1:8000/visitas", {
+            method: "POST",
+            headers:{
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)         
+        });
+
+        if(response.ok){
+            const jsonResponse = await response.json();
+            console.log(jsonResponse);
+        }
+    } catch (error) {
+        
+    }    
 }
 
 // TODO Validate Email
 function validateEmail(email){
     // Basic regex pattern for emails
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // More complex regex pattern for emails
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
 }
 
@@ -91,5 +120,9 @@ function handleEmail(){
     }
 }
 
+
 // TODO Add Event Listeners
-submitButton.addEventListener('click', handleSubmit);
+document.addEventListener('DOMContentLoaded', () => {
+    
+    submitButton.addEventListener('click', handleSubmit);
+});
