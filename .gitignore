@@ -1,3 +1,4 @@
-assets/favicon_io.zip
-assets/*.txt
-assets/favicon_io.zip:Zone.Identifier
+frontend/assets/favicon_io.zip
+frontend/assets/*.txt
+backend/venv/
+frontend/assets/favicon_io.zip:Zone.Identifier
