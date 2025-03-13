@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-#from routes.visitas import router as visitas_router
+from routes.visitas import router as visitas_router
 
 # Initializes  FastAPI app
 app = FastAPI()
@@ -19,21 +19,9 @@ app.add_middleware(
     allow_headers=["*"], # Allows all headers
 )
 
-#app.include_router(visitas_router)
+app.include_router(visitas_router)
 
 # Route to the home page
 @app.get("/")
 def home():
     return {"mensaje": "mensaje enviado desde la api"}
-
-
-# Route to get all visits
-@app.get("/visitas")
-async def get_visitas():
-    return {"mensaje": "Lista de visitas"}
-
-# Route to create a new visit
-@app.post("/visitas")
-async def create_visita():
-    print("Visita creada")
-    return {"mensaje": "Visita creada"}

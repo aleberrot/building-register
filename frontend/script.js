@@ -70,7 +70,10 @@ function reverseRUT(rut){
 
 // TODO Handle Submission
 async function handleSubmit(e){
+    // Prevents the default behavior of the form
     e.preventDefault();
+
+    // Saves the data from the inputs
     const data = {
         rut: inputRUT.value,
         email: inputEmail.value,
@@ -79,22 +82,29 @@ async function handleSubmit(e){
         age: inputAge.value,
         phone: inputPhone.value
     }
+    // Logs the data
     console.log(data);
     try {
+        // Makes a POST request to the server
         const response = await fetch("http://127.0.0.1:8000/visitas", {
             method: "POST",
+            // Sets the headers
             headers:{
                 "Content-Type": "application/json"
             },
+            // Converts the data to a JSON string
             body: JSON.stringify(data)         
         });
-
+        // Checks if the response is ok
         if(response.ok){
+            // Converts the response to JSON
             const jsonResponse = await response.json();
+            // Logs the response
             console.log(jsonResponse);
         }
     } catch (error) {
-        
+        // Logs the error
+        console.error({"HTTP Error": error});        
     }    
 }
 
