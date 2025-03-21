@@ -1,5 +1,6 @@
 frontend/assets/favicon_io.zip
 frontend/assets/*.txt
 backend/venv/
-backend/__pycache__
+backend/__pycache__/
 frontend/assets/favicon_io.zip:Zone.Identifier
+backend/.env

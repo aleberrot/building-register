@@ -6,6 +6,8 @@ const inputName = document.getElementById('name');
 const inputLastName = document.getElementById('lastName');
 const inputAge = document.getElementById('age');
 const inputPhone = document.getElementById('phone');
+const userTypeSelect = document.getElementById('tipo-de-usuario');
+const referringSelect = document.getElementById('referente');
 
 // Message element
 const message = document.getElementById('message');
@@ -80,7 +82,9 @@ async function handleSubmit(e){
         name: inputName.value,
         lastName: inputLastName.value,
         age: inputAge.value,
-        phone: inputPhone.value
+        phone: inputPhone.value,
+        userType: userTypeSelect.value,
+        referring: referringSelect.value
     }
     // Logs the data
     console.log(data);
