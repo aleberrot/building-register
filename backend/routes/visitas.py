@@ -34,7 +34,7 @@ class VisitanteSchema(BaseModel):
 # Don't add name to route, the prefix is already defined in the router
 @router.post("/")
 async def add_visitor(visitor: VisitanteSchema, db: Session = Depends(get_db)):
-    new_visitor = Visitante(**visitor.dict())
+    new_visitor = Visitante(**visitor.model_dump())
     db.add(new_visitor)
     db.commit()
     db.refresh(new_visitor)
